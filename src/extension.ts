@@ -8,9 +8,18 @@ export function activate(context: vscode.ExtensionContext) {
     const commandId = 'extension.bingDict';
     
     context.subscriptions.push(vscode.commands.registerCommand(commandId, async () => {
+        let value = '';
+
+        let editor: vscode.TextEditor;
+        if (editor = vscode.window.activeTextEditor) {
+            const doc = editor.document;
+            if (doc) {
+                
+            }
+        }
 
         const word = await vscode.window.showInputBox({
-            placeHolder: 'Input a word to lookup definition'
+            value, placeHolder: 'Input a word to lookup definition'
         });
 
         const definition = await getDefinition(word);

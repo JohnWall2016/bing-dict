@@ -21,7 +21,16 @@
 				"command": "extension.bingDict",
 				"title": "Bing Dictionary"
 			}
-		]
+		],
+		"contributes": {
+			"keybindings": [
+				{
+					"key": "ctrl+c d",
+					"command": "extension.bingDict",
+					"when": "editorTextFocus"
+				}
+			]
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
