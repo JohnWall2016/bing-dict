@@ -12,9 +12,14 @@ export function activate(context: vscode.ExtensionContext) {
 
         let editor: vscode.TextEditor;
         if (editor = vscode.window.activeTextEditor) {
-            const doc = editor.document;
-            if (doc) {
-                
+            const selection = editor.selection;
+            if (selection.start.line === selection.end.line) {
+                if (selection.isEmpty) {
+                    let range = editor.document.getWordRangeAtPosition(selection.start);
+                    value = editor.document.getText(range);
+                } else {
+                    value = editor.document.getText(selection);
+                }
             }
         }
 
