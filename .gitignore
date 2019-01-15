@@ -1,0 +1,4 @@
+node_modules
+shrinkwrap.yaml
+out
+_*.js
