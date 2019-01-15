@@ -3,7 +3,7 @@
 	"displayName": "bing-dict",
 	"description": "Bing Dictionary",
 	"version": "0.0.1",
-	"publisher": "",
+	"publisher": "JohnWall2016",
 	"repository": "https://github.com/JohnWall2016/bing-dict",
 	"engines": {
 		"vscode": "^1.25.0"
