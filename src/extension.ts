@@ -4,7 +4,6 @@ import * as vscode from 'vscode';
 import * as http from 'http';
 
 export function activate(context: vscode.ExtensionContext) {
-
     const commandId = 'extension.bingDict';
     
     context.subscriptions.push(vscode.commands.registerCommand(commandId, async () => {
@@ -32,7 +31,6 @@ export function activate(context: vscode.ExtensionContext) {
             const definition = await getDefinition(word);
             vscode.window.showInformationMessage(definition);
         }
-        
     }));
 }
 
