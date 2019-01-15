@@ -5,7 +5,6 @@ import * as http from 'http';
 
 export function activate(context: vscode.ExtensionContext) {
     const commandId = 'extension.bingDict';
-    
     context.subscriptions.push(vscode.commands.registerCommand(commandId, async () => {
         let value = '';
         let editor: vscode.TextEditor;
@@ -22,11 +21,9 @@ export function activate(context: vscode.ExtensionContext) {
                 }
             }
         }
-
         const word = await vscode.window.showInputBox({
             value, placeHolder: 'Input a word to lookup definition'
         });
-
         if (word) {
             const definition = await getDefinition(word);
             vscode.window.showInformationMessage(definition);
