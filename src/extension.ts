@@ -79,11 +79,7 @@ class Unescape {
 
     constructor(map = unescapeMap) {
         this.map = map;
-        const regex = [];
-        for (const r of map.keys()) {
-            regex.push(r);
-        }
-        this.regexp = new RegExp(regex.join('|'), 'g');
+        this.regexp = new RegExp([...map.keys()].join('|'), 'g');
     }
 
     replace(str: string) {
